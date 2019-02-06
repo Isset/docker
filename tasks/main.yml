@@ -1,0 +1,15 @@
+---
+- name: ensure docker apt key is present
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: ensure docker apt repository is active
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+    filename: docker
+    state: present
+
+- apt:
+    package: docker-ce
+    update_cache: yes

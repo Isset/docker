@@ -1,0 +1,10 @@
+---
+dependencies:
+  - role: isset.package
+    package_name: apt-transport-https
+  - role: isset.package
+    package_name: ca-certificates
+  - role: isset.package
+    package_name: curl
+  - role: isset.package
+    package_name: software-properties-common

@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  roles:
+    - isset.docker
+
+  tasks:
+    - command: docker --version
+      register: dockert
+
+    - debug:
+        var: dockert
