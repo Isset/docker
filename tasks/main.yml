@@ -17,7 +17,3 @@
     update_cache: yes
     state: "{{ isset_docker_state }}"
     autoremove: yes
-  register: isset_docker_install
-
-- debug:
-    var: isset_docker_install

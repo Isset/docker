@@ -8,9 +8,6 @@
     - command: docker --version
       register: dockert
 
-    - debug:
-        var: dockert.stdout
-
     - assert:
         that:
           - '"Docker version" in dockert.stdout'
@@ -25,9 +22,7 @@
   tasks:
     - command: docker --version
       register: dockert
-
-    - debug:
-        var: dockert.stdout
+      ignore_errors: True
 
     - assert:
         that:
