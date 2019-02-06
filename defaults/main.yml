@@ -2,4 +2,5 @@
 isset:
   docker:
     state: present
-    key_id: 0EBFCD88
+    key:
+      id: "0EBFCD88"
