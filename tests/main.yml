@@ -24,6 +24,9 @@
       register: dockert
       ignore_errors: True
 
+    - debug:
+        var: dockert
+
     - assert:
         that:
           - '"Docker version" not in dockert.stdout'
