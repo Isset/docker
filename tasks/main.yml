@@ -1,14 +1,14 @@
 ---
 - name: ensure docker apt key is present
   apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
+    url: "{{ isset_docker_key_url }}"
     id: "{{ isset_docker_key_id }}"
     state: "{{ isset_docker_state }}"
 
 - name: ensure docker apt repository is active
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
-    filename: docker
+    repo: "{{ isset_docker_repo }}"
+    filename: "{{ isset_docker_repo_filename }}"
     state: "{{ isset_docker_state }}"
 
 - name: ensure docker

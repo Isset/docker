@@ -12,7 +12,11 @@ Role Variables
 --------------
 
     isset_docker_state: present
+    isset_docker_key_url: https://download.docker.com/linux/ubuntu/gpg
     isset_docker_key_id: "0EBFCD88"
+    isset_docker_package: docker-ce
+    isset_docker_repo_filename: docker
+    isset_docker_repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 
 Dependencies
