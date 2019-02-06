@@ -9,4 +9,8 @@
       register: dockert
 
     - debug:
-        var: dockert
+        var: dockert.stdout
+
+    - assert:
+        that:
+          - '"Docker version" in dockert.stdout'
