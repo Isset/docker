@@ -2,9 +2,13 @@
 dependencies:
   - role: isset.package
     package_name: apt-transport-https
+    package_state: "{{ isset.docker.state }}"
   - role: isset.package
     package_name: ca-certificates
+    package_state: "{{ isset.docker.state }}"
   - role: isset.package
     package_name: curl
+    package_state: "{{ isset.docker.state }}"
   - role: isset.package
     package_name: software-properties-common
+    package_state: "{{ isset.docker.state }}"

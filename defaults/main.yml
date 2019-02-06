@@ -1,2 +1,4 @@
 ---
-isset.docker_state: present
+isset:
+  docker:
+    state: present
