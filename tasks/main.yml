@@ -13,6 +13,10 @@
 
 - name: ensure docker
   apt:
-    package: docker-ce
+    package: "{{ isset_docker_package }}"
     update_cache: yes
     state: "{{ isset_docker_state }}"
+  register: isset_docker_install
+
+- debug:
+    var: isset_docker_install
