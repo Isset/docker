@@ -14,3 +14,20 @@
     - assert:
         that:
           - '"Docker version" in dockert.stdout'
+
+- hosts: localhost
+  become: yes
+  roles:
+    - role: isset.docker
+      isset.docker_state: absent
+
+  tasks:
+    - command: docker --version
+      register: dockert
+
+    - debug:
+        var: dockert.stdout
+
+    - assert:
+        that:
+          - '"Docker version" not in dockert.stdout'
