@@ -2,17 +2,17 @@
 - name: ensure docker apt key is present
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-    id: "{{ isset.docker.key.id }}"
-    state: "{{ isset.docker.state }}"
+    id: "{{ isset_docker_key_id }}"
+    state: "{{ isset_docker_state }}"
 
 - name: ensure docker apt repository is active
   apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
     filename: docker
-    state: "{{ isset.docker.state }}"
+    state: "{{ isset_docker_state }}"
 
 - name: ensure docker
   apt:
     package: docker-ce
     update_cache: yes
-    state: "{{ isset.docker.state }}"
+    state: "{{ isset_docker_state }}"

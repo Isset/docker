@@ -11,7 +11,9 @@ Ansible 2.5 or above is highly recommended.
 Role Variables
 --------------
 
-	n/a
+    isset_docker_state: present
+    isset_docker_key_id: "0EBFCD88"
+
 
 Dependencies
 ------------

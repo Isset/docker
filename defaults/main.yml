@@ -1,6 +1,3 @@
 ---
-isset:
-  docker:
-    state: present
-    key:
-      id: "0EBFCD88"
+isset_docker_state: present
+isset_docker_key_id: "0EBFCD88"
