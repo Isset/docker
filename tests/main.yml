@@ -19,7 +19,8 @@
   become: yes
   roles:
     - role: isset.docker
-      isset_docker_state: absent
+      vars:
+        isset_docker_state: absent
 
   tasks:
     - command: docker --version
