@@ -16,4 +16,5 @@
     package: "{{ isset_docker_package }}"
     update_cache: yes
     state: "{{ isset_docker_state }}"
+    purge: yes
     autoremove: yes
