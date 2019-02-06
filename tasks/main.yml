@@ -2,7 +2,7 @@
 - name: ensure docker apt key is present
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
-    id: "{{ isset.docker.key.id }}"
+    id: "{{ isset.docker.key_id }}"
     state: "{{ isset.docker.state }}"
 
 - name: ensure docker apt repository is active
