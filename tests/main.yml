@@ -23,6 +23,7 @@
     - command: docker --version
       register: dockert
       ignore_errors: True
+      changed_when: false
 
     - assert:
         that:
