@@ -20,10 +20,9 @@
     autoremove: yes
 
 - name: make docker play nice with UFW
-  lineinfile:
-    path: /etc/default/docker
-    line: 'DOCKER_OPTS="--iptables=false"'
-    create: yes
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
   notify: restart docker
   when:
     - isset_docker_state == 'present'
