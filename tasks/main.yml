@@ -18,3 +18,10 @@
     state: "{{ isset_docker_state }}"
     purge: yes
     autoremove: yes
+
+- name: make docker play nice with UFW
+  lineinfile:
+    path: /etc/default/docker
+    line: 'DOCKER_OPTS="--iptables=false"'
+    create: yes
+  notify: restart docker
