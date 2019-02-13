@@ -25,3 +25,5 @@
     line: 'DOCKER_OPTS="--iptables=false"'
     create: yes
   notify: restart docker
+  when:
+    - isset_docker_state == 'present'
