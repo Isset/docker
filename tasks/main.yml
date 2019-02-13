@@ -19,6 +19,11 @@
     purge: yes
     autoremove: yes
 
+- name: ensure template directory exists
+  file:
+    path: /etc/docker
+    state: directory
+
 - name: make docker play nice with UFW
   template:
     src: daemon.json.j2
