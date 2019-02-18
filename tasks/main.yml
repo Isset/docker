@@ -31,3 +31,16 @@
   notify: restart docker
   when:
     - isset_docker_state == 'present'
+
+- name: clean up daemon.json if required
+  file:
+    path: /etc/docker/daemon.json
+  when:
+    - isset_docker_state == 'absent'
+
+- name: log in when required
+  command: docker login -u {{ isset_docker_login_username }} -p {{ isset_docker_login_token }}
+  changed_when: false
+  when:
+    - isset_docker_login_username is defined
+    - isset_docker_login_username is not ""
