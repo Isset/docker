@@ -41,6 +41,7 @@
 - name: log in when required
   command: docker login -u {{ isset_docker_login_username }} -p {{ isset_docker_login_token }}
   changed_when: false
+  failed_when: false
   when:
     - isset_docker_login_username is defined
     - isset_docker_login_username != ""
