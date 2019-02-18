@@ -37,11 +37,3 @@
     path: /etc/docker/daemon.json
   when:
     - isset_docker_state == 'absent'
-
-- name: log in when required
-  command: "docker login -u {{ isset_docker_login_username }} -p {{ isset_docker_login_token }} {{ isset_docker_login_repository }}"
-  changed_when: False
-  failed_when: False
-  when:
-    - isset_docker_login_username is defined
-    - isset_docker_login_username != ""
