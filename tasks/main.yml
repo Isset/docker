@@ -43,4 +43,4 @@
   changed_when: false
   when:
     - isset_docker_login_username is defined
-    - isset_docker_login_username is not ""
+    - isset_docker_login_username != ""
