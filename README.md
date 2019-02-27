@@ -6,7 +6,7 @@ _Installs docker._
 Requirements
 ------------
 
-Ansible 2.5 or above is highly recommended.
+Ansible 2.6 or above is highly recommended.
 
 Role Variables
 --------------
