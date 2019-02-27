@@ -24,7 +24,7 @@
     path: /etc/docker
     state: directory
 
-- name: make docker play nice with UFW
+- name: ensure daemon config
   template:
     src: daemon.json.j2
     dest: /etc/docker/daemon.json
@@ -37,3 +37,8 @@
     path: /etc/docker/daemon.json
   when:
     - isset_docker_state == 'absent'
+
+- name: ensure docker compatability with UFW
+  blockinfile:
+    path: /etc/ufw/after.rules
+    block: "{{ isset_docker_ufw }}"
