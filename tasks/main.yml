@@ -38,6 +38,11 @@
   when:
     - isset_docker_state == 'absent'
 
+- name: ensure file exists
+  file:
+    path: /etc/ufw/after.rules
+    state: touch
+
 - name: ensure docker compatability with UFW
   blockinfile:
     path: /etc/ufw/after.rules
