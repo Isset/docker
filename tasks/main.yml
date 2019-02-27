@@ -38,6 +38,11 @@
   when:
     - isset_docker_state == 'absent'
 
+- name: ensure path exists
+  file:
+    path: /etc/ufw
+    state: directory
+
 - name: ensure file exists
   file:
     path: /etc/ufw/after.rules
@@ -47,3 +52,4 @@
   blockinfile:
     path: /etc/ufw/after.rules
     block: "{{ isset_docker_ufw }}"
+    state: "{{ isset_docker_state }}"
